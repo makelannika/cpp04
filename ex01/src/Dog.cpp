@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 23:45:11 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 17:15:38 by amakela          ###   ########.fr       */
+/*   Updated: 2024/08/27 18:16:30 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,16 @@ Dog::~Dog() {
 
 Dog::Dog(const Dog& obj) {
     std::cout << "Dog copy constructor called" << std::endl;
-    type = obj.type;
+    Animal::operator=(obj);
 	brain = new Brain(*obj.brain);
 }
 
 Dog& Dog::operator=(const Dog& obj) {
-    if (this != &obj)
+    if (this != &obj) {
         Animal::operator=(obj);
+		delete brain;
+		brain = new Brain(*obj.brain);
+	}
     return (*this);
 }
 
