@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 00:16:33 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 17:11:48 by amakela          ###   ########.fr       */
+/*   Updated: 2024/08/27 17:38:31 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int main()
 
 	const Cat	cat;
 	const Cat	anotherCat(cat);
-	const Cat	thirdCat = anotherCat;
+	Cat			thirdCat;
+	thirdCat = anotherCat;
 	std::cout << std::endl;
 
 	std::cout << "cat: " << &cat << std::endl;
