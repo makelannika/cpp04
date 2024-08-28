@@ -6,12 +6,14 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:13:13 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 21:25:44 by amakela          ###   ########.fr       */
+/*   Updated: 2024/08/28 18:08:57 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
+
+#include "AMateria.hpp"
 
 class ICharacter {
 	public:

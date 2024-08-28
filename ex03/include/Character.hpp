@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:16:29 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 20:25:09 by amakela          ###   ########.fr       */
+/*   Updated: 2024/08/28 20:18:15 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 
 class Character : public ICharacter {
 	private:
-		std::string const & name;
-		AMateria			inventory[4];
+		std::string name;
+		AMateria*	inventory[4] = {nullptr};
+		AMateria*	dropped[100] = {nullptr};
 		
 	public:
 		Character();
