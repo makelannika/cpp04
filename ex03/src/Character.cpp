@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:26:13 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/28 20:28:50 by amakela          ###   ########.fr       */
+/*   Updated: 2024/08/28 21:12:24 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,8 @@ void	Character::unequip(int idx) {
 }
 
 void	Character::use(int idx, ICharacter& target) {
-	inventory[idx]->use(target);
+	if (idx >= 0 && idx <= 3) {
+		if (inventory[idx])
+			inventory[idx]->use(target);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 17:32:47 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/28 20:23:36 by amakela          ###   ########.fr       */
+/*   Updated: 2024/08/28 21:27:17 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	MateriaSource::learnMateria(AMateria* m) {
 			return ;
 		}
 	}
+	delete m;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type) {
