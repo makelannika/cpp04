@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongAnimal.hpp"
-#include "../include/WrongCat.hpp"
-#include "../include/Animal.hpp"
-#include "../include/Dog.hpp"
-#include "../include/Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {

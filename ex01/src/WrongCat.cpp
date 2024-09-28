@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongCat.hpp"
+#include "WrongCat.hpp"
 
 WrongCat::WrongCat() {
     type = "wrong cat";

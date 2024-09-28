@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.hpp"
+#include "Cat.hpp"
 
-Cat::Cat() {
+Cat::Cat() : Animal() {
     std::cout << "Cat constructor called" << std::endl;
     type = "cat";
 	brain = new Brain();
@@ -23,14 +23,12 @@ Cat::~Cat() {
     std::cout << "Cat destructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& obj) {
+Cat::Cat(const Cat& obj) : Animal(obj) {
     std::cout << "Cat copy constructor called" << std::endl;
-	Animal::operator=(obj);
 	brain = new Brain(*obj.brain);
 }
 
 Cat& Cat::operator=(const Cat& obj) {
-	std::cout << "Cat assignment operator called" << std::endl;
     if (this != &obj) {
         Animal::operator=(obj);
 		delete brain;
