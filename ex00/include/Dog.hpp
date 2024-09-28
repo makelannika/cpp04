@@ -26,7 +26,7 @@ class Dog : public Animal {
 
         Dog& operator=(const Dog& obj);
         
-        void        makeSound() const override;
+        void	makeSound() const override;
 };
 
 #endif

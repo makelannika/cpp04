@@ -10,20 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongCat.hpp"
+#include "WrongCat.hpp"
 
-WrongCat::WrongCat() {
-    type = "wrong cat";
+WrongCat::WrongCat() : WrongAnimal() {
     std::cout << "Wrong cat constructor called" << std::endl;
+    type = "wrong cat";
 }
 
 WrongCat::~WrongCat() {
     std::cout << "Wrong cat destructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& obj) {
+WrongCat::WrongCat(const WrongCat& obj) : WrongAnimal(obj) {
     std::cout << "Wrong cat copy constructor called" <<std::endl;
-    *this = obj;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& obj) {

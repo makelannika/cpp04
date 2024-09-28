@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.hpp"
+#include "Animal.hpp"
 
 Animal::Animal() {
     std::cout << "Animal constructor called" <<std::endl;
-    type = "random animal";
+    type = "unknown animal";
 }
 
 Animal::~Animal() {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongAnimal.hpp"
+#include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() {
     std::cout << "Wrong animal constructor called" << std::endl;

@@ -10,45 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongAnimal.hpp"
-#include "../include/WrongCat.hpp"
-#include "../include/Animal.hpp"
-#include "../include/Dog.hpp"
-#include "../include/Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const WrongAnimal* a = new WrongAnimal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    const WrongCat* b = new WrongCat();
+    const Animal* animal1 = new Animal();
+    const WrongAnimal* wrong1 = new WrongAnimal();
+    const Animal* animal2 = new Dog();
+    const Animal* animal3 = new Cat();
+    const WrongAnimal* wrong2 = new WrongCat();
     std::cout << std::endl;
 
-    std::cout << "j is a " << j->getType() << std::endl;
-    std::cout << "i is a " << i->getType() << std::endl;
-    std::cout << "meta is a " << meta->getType() << std::endl;
-    std::cout << "a is a " << a->getType() << std::endl;
-    std::cout << "b is a " << b->getType() << std::endl;
+    std::cout << "animal2 is a " << animal2->getType() << std::endl;
+    std::cout << "animal3 is a " << animal3->getType() << std::endl;
+    std::cout << "animal1 is an " << animal1->getType() << std::endl;
+    std::cout << "wrong1 is a " << wrong1->getType() << std::endl;
+    std::cout << "wrong2 is a " << wrong2->getType() << std::endl;
     std::cout << std::endl;
     
-    std::cout << i->getType() << ": ";
-    i->makeSound();
-    std::cout << j->getType() << ": ";
-    j->makeSound();
-    std::cout << meta->getType() << ": ";
-    meta->makeSound();
-    std::cout << a->getType() << ": ";
-    a->makeSound();
-    std::cout << b->getType() << ": ";
-    b->makeSound();
+    std::cout << animal3->getType() << ": ";
+    animal3->makeSound();
+    std::cout << animal2->getType() << ": ";
+    animal2->makeSound();
+    std::cout << animal1->getType() << ": ";
+    animal1->makeSound();
+    std::cout << wrong1->getType() << ": ";
+    wrong1->makeSound();
+    std::cout << wrong2->getType() << ": ";
+    wrong2->makeSound();
     std::cout << std::endl;
 
-    delete meta;
-    delete j;
-    delete i;
-    delete a;
-    delete b;
+    delete animal1;
+    delete animal2;
+    delete animal3;
+    delete wrong1;
+    delete wrong2;
     
     return 0;
 }
