@@ -18,7 +18,6 @@
 
 int main()
 {
-    const Animal* animal1 = new Animal();
     const WrongAnimal* wrong1 = new WrongAnimal();
     const Animal* animal2 = new Dog();
     const Animal* animal3 = new Cat();

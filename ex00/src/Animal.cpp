@@ -33,7 +33,7 @@ Animal& Animal::operator=(const Animal& obj) {
 }
 
 std::string Animal::getType() const {
-    return (this->type);
+    return (type);
 }
 
 void    Animal::makeSound() const {

@@ -23,7 +23,7 @@ WrongAnimal::~WrongAnimal() {
 
 WrongAnimal::WrongAnimal(const WrongAnimal& obj) {
     std::cout << "Wrong animal copy constructor called" << std::endl;
-    *this = obj;
+    type = obj.type;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& obj) {
