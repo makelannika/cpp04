@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Dog.hpp"
+#include "Dog.hpp"
 
-Dog::Dog() {
+Dog::Dog() : AAnimal() {
     std::cout << "Dog constructor called" <<std::endl;
     type = "dog";
 	brain = new Brain();
@@ -23,17 +23,15 @@ Dog::~Dog() {
     std::cout << "Dog destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& obj) {
+Dog::Dog(const Dog& obj) : AAnimal(obj) {
     std::cout << "Dog copy constructor called" << std::endl;
-    AAnimal::operator=(obj);
 	brain = new Brain(*obj.brain);
 }
 
 Dog& Dog::operator=(const Dog& obj) {
     if (this != &obj) {
         AAnimal::operator=(obj);
-		delete brain;
-		brain = new Brain(*obj.brain);
+		*brain = *obj.brain;
 	}
     return (*this);
 }

@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/AAnimal.hpp"
+#include "AAnimal.hpp"
 
 AAnimal::AAnimal() {
     std::cout << "Animal constructor called" <<std::endl;
-    type = "random animal";
 }
 
 AAnimal::~AAnimal() {
@@ -23,7 +22,7 @@ AAnimal::~AAnimal() {
 
 AAnimal::AAnimal(const AAnimal& obj) {
     std::cout << "Animal copy constructor called" << std::endl;
-    *this = obj;
+    type = obj.type;
 }
 
 AAnimal& AAnimal::operator=(const AAnimal& obj) {
@@ -33,6 +32,5 @@ AAnimal& AAnimal::operator=(const AAnimal& obj) {
 }
 
 std::string AAnimal::getType() const {
-    return (this->type);
+    return (type);
 }
-

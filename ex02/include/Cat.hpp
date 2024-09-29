@@ -30,7 +30,7 @@ class Cat : public AAnimal {
 
         Cat& operator=(const Cat& obj);
         
-        void        makeSound() const override;
+        void	makeSound() const override;
 };
 
 #endif

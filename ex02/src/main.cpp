@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/WrongAnimal.hpp"
-#include "../include/WrongCat.hpp"
-#include "../include/AAnimal.hpp"
-#include "../include/Dog.hpp"
-#include "../include/Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "AAnimal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
@@ -31,17 +31,6 @@ int main()
 	
 	for (int i = 0; i < 6; i++)
 		delete animals[i]; 
-	std::cout << std::endl;
-
-	const Cat	cat;
-	const Cat	anotherCat(cat);
-	Cat			thirdCat;
-	thirdCat = anotherCat;
-	std::cout << std::endl;
-
-	std::cout << "cat: " << &cat << std::endl;
-	std::cout << "anotherCat: " << &anotherCat << std::endl;
-	std::cout << "thirdCat: " << &thirdCat << std::endl;
 	std::cout << std::endl;
   
     return 0;
