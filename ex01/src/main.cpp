@@ -30,14 +30,12 @@ int main()
 	std::cout << std::endl;
 
 	const Cat	cat;
-	const Cat	anotherCat(cat);
-	Cat			thirdCat;
-	thirdCat = anotherCat;
+	Cat			anotherCat;
+	anotherCat = cat;
 	std::cout << std::endl;
 
 	std::cout << "cat: " << &cat << std::endl;
 	std::cout << "anotherCat: " << &anotherCat << std::endl;
-	std::cout << "thirdCat: " << &thirdCat << std::endl;
 	std::cout << std::endl;
   
     return 0;
