@@ -6,15 +6,14 @@
 #    By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/26 23:37:05 by amakela           #+#    #+#              #
-#    Updated: 2024/09/30 12:43:54 by amakela          ###   ########.fr        #
+#    Updated: 2024/09/30 16:03:54 by amakela          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	animal
 
 CPPFILES	=	src/main.cpp		src/Animal.cpp			src/Dog.cpp			\
-				src/Cat.cpp			src/WrongAnimal.cpp		src/WrongCat.cpp	\
-				src/Brain.cpp
+				src/Cat.cpp			src/Brain.cpp
  
 OFILES		=	$(CPPFILES:.cpp=.o)
 

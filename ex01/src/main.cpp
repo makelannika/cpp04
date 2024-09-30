@@ -6,12 +6,10 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 00:16:33 by amakela           #+#    #+#             */
-/*   Updated: 2024/09/30 13:32:38 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 16:02:58 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
