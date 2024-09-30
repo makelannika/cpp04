@@ -6,13 +6,13 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 23:55:01 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 00:54:36 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 12:25:02 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal() {
+Cat::Cat() {
     std::cout << "Cat constructor called" <<std::endl;
     type = "cat";
 }

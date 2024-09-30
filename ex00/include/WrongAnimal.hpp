@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 00:55:55 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 01:01:53 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 12:28:44 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class WrongAnimal {
         WrongAnimal& operator=(const WrongAnimal& obj);
 
         std::string     getType() const;
-        virtual void    makeSound() const;
+        void            makeSound() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 00:56:27 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 01:01:11 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 12:38:16 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class WrongCat : public WrongAnimal {
         WrongCat(const WrongCat& obj);
 
         WrongCat& operator=(const WrongCat& obj);
-        
-        void	makeSound() const override;
 };
 
 #endif
