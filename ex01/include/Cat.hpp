@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 23:54:12 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 16:48:34 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 13:04:30 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Cat : public Animal {
 
         Cat& operator=(const Cat& obj);
         
-        void        makeSound() const override;
+        void  makeSound() const override;
 };
 
 #endif

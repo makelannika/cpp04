@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 00:16:33 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 17:38:31 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 13:32:38 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,11 @@ int main()
     std::cout << std::endl;
 
 	for (int i = 0; i < 6; i++)
+		animals[i]->makeSound();
+	std::cout << std::endl;
+
+	for (int i = 0; i < 6; i++)
 		delete animals[i]; 
-	std::cout << std::endl;
-
-	const Cat	cat;
-	Cat			anotherCat;
-	anotherCat = cat;
-	std::cout << std::endl;
-
-	std::cout << "cat: " << &cat << std::endl;
-	std::cout << "anotherCat: " << &anotherCat << std::endl;
 	std::cout << std::endl;
   
     return 0;

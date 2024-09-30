@@ -6,7 +6,7 @@
 #    By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/26 23:37:05 by amakela           #+#    #+#              #
-#    Updated: 2024/08/27 14:42:56 by amakela          ###   ########.fr        #
+#    Updated: 2024/09/30 12:43:54 by amakela          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,13 @@ CC			=	c++ -std=c++11
 
 FLAGS		=	-Wall -Wextra -Werror
 
-%.o:%.cpp
-	$(CC) $(FLAGS) $(HEADERS) -c $< -o $@
-
 all: $(NAME)
 
 $(NAME): $(OFILES)
 	$(CC) $(FLAGS) $(OFILES) -o $(NAME)
+
+%.o:%.cpp
+	$(CC) $(FLAGS) $(HEADERS) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

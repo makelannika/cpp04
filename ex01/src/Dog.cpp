@@ -6,13 +6,13 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 23:45:11 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 18:16:30 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 13:03:21 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() {
     std::cout << "Dog constructor called" <<std::endl;
     type = "dog";
 	brain = new Brain();
