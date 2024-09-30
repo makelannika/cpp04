@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 23:45:11 by amakela           #+#    #+#             */
-/*   Updated: 2024/09/30 13:03:21 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 15:51:23 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Dog::Dog(const Dog& obj) : Animal(obj) {
 Dog& Dog::operator=(const Dog& obj) {
     if (this != &obj) {
         Animal::operator=(obj);
-		*brain = *obj.brain;
+        delete brain;
+		brain = new Brain(*obj.brain);
 	}
     return (*this);
 }

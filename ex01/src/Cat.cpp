@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 23:55:01 by amakela           #+#    #+#             */
-/*   Updated: 2024/09/30 13:46:38 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 15:52:18 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Cat::Cat(const Cat& obj) : Animal(obj) {
 Cat& Cat::operator=(const Cat& obj) {
     if (this != &obj) {
         Animal::operator=(obj);
-		*brain = *obj.brain;
+        delete brain;
+		brain = new Brain(*obj.brain);
 	}
     return (*this);
 }
