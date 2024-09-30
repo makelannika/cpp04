@@ -6,13 +6,13 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 23:45:11 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 18:11:35 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 15:57:02 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : AAnimal() {
+Dog::Dog() {
     std::cout << "Dog constructor called" <<std::endl;
     type = "dog";
 	brain = new Brain();
@@ -31,7 +31,8 @@ Dog::Dog(const Dog& obj) : AAnimal(obj) {
 Dog& Dog::operator=(const Dog& obj) {
     if (this != &obj) {
         AAnimal::operator=(obj);
-		*brain = *obj.brain;
+        delete brain;
+		brain = new Brain(*obj.brain);
 	}
     return (*this);
 }

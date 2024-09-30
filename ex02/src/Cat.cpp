@@ -6,13 +6,13 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 23:55:01 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/27 18:10:25 by amakela          ###   ########.fr       */
+/*   Updated: 2024/09/30 15:57:08 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : AAnimal() {
+Cat::Cat() {
     std::cout << "Cat constructor called" << std::endl;
     type = "cat";
 	brain = new Brain();
@@ -31,7 +31,8 @@ Cat::Cat(const Cat& obj) : AAnimal(obj) {
 Cat& Cat::operator=(const Cat& obj) {
     if (this != &obj) {
         AAnimal::operator=(obj);
-		*brain = *obj.brain;
+        delete brain;
+		brain = new Brain(*obj.brain);
 	}
     return (*this);
 }
