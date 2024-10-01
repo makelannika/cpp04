@@ -21,7 +21,7 @@ Cure::Cure(const Cure& obj) : AMateria(obj) {}
 Cure&	Cure::operator=(const Cure& obj) {
 	if (this != &obj)
 		AMateria::operator=(obj);
-	return (*this);
+	return *this;
 }
 
 Cure*	Cure::clone() const {

@@ -19,8 +19,9 @@
 class Character : public ICharacter {
 	private:
 		std::string name;
-		AMateria*	inventory[4] = {nullptr};
-		AMateria*	dropped[4] = {nullptr};
+		AMateria*	inventory[4] = {};
+		AMateria**	dropped;
+		int			nbDropped;
 		
 	public:
 		Character();

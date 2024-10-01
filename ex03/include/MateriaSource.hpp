@@ -13,22 +13,22 @@
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
-#include "../include/IMateriaSource.hpp"
+#include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource {
 	private:
-		AMateria*	learned[4] = {nullptr};
+		AMateria*	learned[4] = {};
 		
 	public:
 		MateriaSource();
-		~MateriaSource();
+		~MateriaSource() override;
 		
 		MateriaSource(const MateriaSource& obj);
 
 		MateriaSource&	operator=(const MateriaSource& obj);
 		
-		void learnMateria(AMateria*);
-		AMateria* createMateria(std::string const & type);	
+		void learnMateria(AMateria*) override;
+		AMateria* createMateria(std::string const & type) override;	
 };
 
 #endif

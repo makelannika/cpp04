@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/MateriaSource.hpp"
+#include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() {}
 
@@ -25,8 +25,6 @@ MateriaSource::MateriaSource(const MateriaSource& obj) {
 	for (int i = 0; i < 4; i++) {
 		if (obj.learned[i])
 			learned[i] = obj.learned[i]->clone();
-		else
-			learned[i] = nullptr;
 	}
 }
 
@@ -39,23 +37,28 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& obj) {
 				learned[i] = obj.learned[i]->clone();
 		}
 	}
-	return (*this);
+	return *this;
 };
 
 void	MateriaSource::learnMateria(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (!learned[i]) {
 			learned[i] = m;
+			std::cout << "new materia '" << m->getType() << "' learned" << std::endl;
 			return ;
 		}
 	}
+	std::cout << "cannot learn more materias" << std::endl;
 	delete m;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < 4; i++) {
-		if (learned[i]->getType() == type)
+		if (learned[i] && learned[i]->getType() == type) {
+			std::cout << type << " created" << std::endl;
 			return (learned[i]->clone());
+		}
 	}
+	std::cout << "no template to create'" << type << std::endl;
 	return 0;
 }

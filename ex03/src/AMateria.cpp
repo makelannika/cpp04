@@ -27,11 +27,11 @@ AMateria::AMateria(std::string const & type) {
 AMateria& AMateria::operator=(const AMateria& obj) {
 	if (this != &obj)
 		type = obj.type;
-	return (*this);
+	return *this;
 }
 
 std::string const & AMateria::getType() const {
-	return (type);
+	return type;
 }
 
 void	AMateria::use(ICharacter&) {}

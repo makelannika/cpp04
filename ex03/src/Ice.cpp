@@ -19,13 +19,13 @@ Ice::~Ice() {}
 Ice::Ice(const Ice& obj) : AMateria(obj) {}
 
 Ice&	Ice::operator=(const Ice& obj) {
-	if (this != &obj) /* "when assigning a materia to another copying the type doesn't make sense" */
+	if (this != &obj)
 		AMateria::operator=(obj); 
-	return (*this);
+	return *this;
 }
 
 Ice*	Ice::clone() const {
-	return new Ice(); // where should i delete this
+	return new Ice();
 }
 
 void	Ice::use(ICharacter& target) {

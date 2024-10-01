@@ -14,6 +14,8 @@
 
 Character::Character() {
 	name = "unknown";
+	dropped = new AMateria*[4]();
+	nbDropped = 0;
 }
 
 Character::~Character() {
@@ -21,9 +23,10 @@ Character::~Character() {
 		if (inventory[i])
 			delete inventory[i];
 	}
-	for (int i = 0; dropped[i]; i++) {
+	for (int i = 0; i < nbDropped; i++) {
 			delete dropped[i];
 	}
+	delete[] dropped;
 }
 
 Character::Character(const Character& obj) {
@@ -32,31 +35,28 @@ Character::Character(const Character& obj) {
 		if (obj.inventory[i])
 			inventory[i] = obj.inventory[i]->clone();
 	}
-	for (int i = 0; i < 100; i++) { /* to keep or not to keep */
-		if (obj.dropped[i])
-			dropped[i] = obj.dropped[i]->clone();
-	}
+	dropped = new AMateria*[4]();
+	nbDropped = 0;
 }
 
-Character::Character(std::string name) : name(name) {}
+Character::Character(std::string name) : name(name) {
+	dropped = new AMateria*[4]();
+	nbDropped = 0;
+}
 
 Character&	Character::operator=(const Character& obj) {
 	if (this != &obj) {
 		name = obj.name;
 		for (int i = 0; i < 4; i++) {
-		if (inventory[i])
-			delete inventory[i];
-		if (obj.inventory[i]) 
-			inventory[i] = obj.inventory[i]->clone();
-		}
-		for (int i = 0; i < 100; i++) { /* to keep or not to keep */
-			if (dropped[i])
-				delete dropped[i];
-			if (obj.dropped[i])
-				dropped[i] = obj.dropped[i]->clone();
+			if (inventory[i])
+				delete inventory[i];
+			if (obj.inventory[i]) 
+				inventory[i] = obj.inventory[i]->clone();
+			else
+				inventory[i] = nullptr;
 		}
 	}
-	return (*this);
+	return *this;
 }
 
 std::string const &	Character::getName() const {
@@ -66,23 +66,37 @@ std::string const &	Character::getName() const {
 void	Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (!inventory[i]) {
-			inventory[i] = m; /* should this be a copy? */
-			std::cout << m->getType() << " equipped" << std::endl;
+			inventory[i] = m;
+			if (m)
+				std::cout << m->getType() << " equipped" << std::endl;
 			return ;
 		}
 	}
 	std::cout << "inventory is full, cannot equip " << m->getType() << std::endl;
+	delete m;
 }
 
 void	Character::unequip(int idx) {
-	if (inventory[idx]) {
-		for (int i = 0; i < 100; i++) /* fix this */
-			if (!dropped[i]) {
-				dropped[i] = inventory[idx];
-				inventory[idx] = nullptr;
-				return ;
+	if (idx >= 0 && idx <= 3)
+	{
+		if (inventory[idx]) {
+			if (nbDropped % 4 == 0) {
+				AMateria **newDropped = new AMateria*[nbDropped + 4]();
+				for (int i = 0; i < nbDropped; i++)
+					newDropped[i] = dropped[i];
+				delete[] dropped;
+				dropped = newDropped;
 			}
-	}	
+			dropped[nbDropped] = inventory[idx];
+			inventory[idx] = nullptr;
+			std::cout << dropped[nbDropped]->getType() << " unequipped" << std::endl;
+			nbDropped++;
+			return ;
+		}
+		std::cout << "no materia to unequip at index " << idx << std::endl; 
+		return ;
+	}
+	std::cout << "invalid index" << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target) {
@@ -90,8 +104,8 @@ void	Character::use(int idx, ICharacter& target) {
 		if (inventory[idx])
 			inventory[idx]->use(target);
 		else
-			std::cout << "slot " << idx << " is empty" << std::endl;
+			std::cout << "no materia to use at index " << idx << std::endl; 
 		return ;
 	}
-	std::cout << "invalid slot" << std::endl;
+	std::cout << "invalid index" << std::endl;
 }
