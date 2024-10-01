@@ -6,7 +6,7 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:40:22 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/28 18:08:34 by amakela          ###   ########.fr       */
+/*   Updated: 2024/10/01 01:03:51 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,14 @@ class AMateria {
 	protected:
 		std::string	type;
 
-		AMateria();
-		
-		AMateria(const AMateria& obj);
-		
-		AMateria& operator=(const AMateria& obj);
-
 	public:
+		AMateria();
 		virtual ~AMateria();
 
+		AMateria(const AMateria& obj);
 		AMateria(std::string const & type);
+		
+		AMateria& operator=(const AMateria& obj);
 		
 		std::string const & getType() const;
 		

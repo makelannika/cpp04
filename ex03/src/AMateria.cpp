@@ -6,18 +6,18 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:51:41 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/28 19:46:48 by amakela          ###   ########.fr       */
+/*   Updated: 2024/10/01 01:11:46 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/AMateria.hpp"
+#include "AMateria.hpp"
 
 AMateria::AMateria() {}
 
 AMateria::~AMateria() {}
 
 AMateria::AMateria(const AMateria& obj) {
-	*this = obj;
+	type = obj.type;
 }
 
 AMateria::AMateria(std::string const & type) {

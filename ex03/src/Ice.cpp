@@ -6,31 +6,26 @@
 /*   By: amakela <amakela@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:58:45 by amakela           #+#    #+#             */
-/*   Updated: 2024/08/28 19:45:33 by amakela          ###   ########.fr       */
+/*   Updated: 2024/10/01 01:34:08 by amakela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Ice.hpp"
+#include "Ice.hpp"
 
-Ice::Ice() {
-	type = "ice";
-}
+Ice::Ice() : AMateria("ice") {}
 
 Ice::~Ice() {}
 
-Ice::Ice(const Ice& obj) {
-	*this = obj;
-}
+Ice::Ice(const Ice& obj) : AMateria(obj) {}
 
 Ice&	Ice::operator=(const Ice& obj) {
-	if (this != &obj)
-		type = obj.type;
+	if (this != &obj) /* "when assigning a materia to another copying the type doesn't make sense" */
+		AMateria::operator=(obj); 
 	return (*this);
 }
 
 Ice*	Ice::clone() const {
-	Ice*	clone = new Ice(); // where should i delete this
-	return (clone);
+	return new Ice(); // where should i delete this
 }
 
 void	Ice::use(ICharacter& target) {
