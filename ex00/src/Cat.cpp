@@ -28,7 +28,7 @@ Cat::Cat(const Cat& obj) : Animal(obj) {
 Cat& Cat::operator=(const Cat& obj) {
     if (this != &obj)
         Animal::operator=(obj);
-    return (*this);
+    return *this;
 }
 
 void    Cat::makeSound() const {

@@ -29,11 +29,11 @@ Animal::Animal(const Animal& obj) {
 Animal& Animal::operator=(const Animal& obj) {
     if (this != &obj)
         type = obj.type;
-    return (*this);
+    return *this;
 }
 
 std::string Animal::getType() const {
-    return (type);
+    return type;
 }
 
 void    Animal::makeSound() const {

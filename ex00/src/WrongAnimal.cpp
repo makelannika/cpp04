@@ -29,11 +29,11 @@ WrongAnimal::WrongAnimal(const WrongAnimal& obj) {
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& obj) {
     if (this != &obj)
         type = obj.type;
-    return (*this);
+    return *this;
 }
 
 std::string WrongAnimal::getType() const {
-    return (type);
+    return type;
 }
 
 void    WrongAnimal::makeSound() const {

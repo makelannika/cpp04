@@ -28,5 +28,5 @@ WrongCat::WrongCat(const WrongCat& obj) : WrongAnimal(obj) {
 WrongCat& WrongCat::operator=(const WrongCat& obj) {
     if (this != &obj)
         WrongAnimal::operator=(obj);
-    return (*this);
+    return *this;
 }

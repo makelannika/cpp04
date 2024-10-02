@@ -28,7 +28,7 @@ Dog::Dog(const Dog& obj) : Animal(obj) {
 Dog& Dog::operator=(const Dog& obj) {
     if (this != &obj)
         Animal::operator=(obj);
-    return (*this);
+    return *this;
 }
 
 void    Dog::makeSound() const {
