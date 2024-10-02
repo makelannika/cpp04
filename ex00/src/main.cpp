@@ -59,7 +59,7 @@ int main()
 	wrongCat.makeSound();
     std::cout << std::endl;
 
-    /* deleting All animals */
+    /* deleting all Animals */
     delete animal1;
     delete animal2;
     delete animal3;
