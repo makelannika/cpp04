@@ -34,7 +34,7 @@ Dog& Dog::operator=(const Dog& obj) {
         delete brain;
 		brain = new Brain(*obj.brain);
 	}
-    return (*this);
+    return *this;
 }
 
 void    Dog::makeSound() const {

@@ -31,5 +31,5 @@ Brain&	Brain::operator=(const Brain& obj) {
 		for (int i = 0; i < 100; i++)
 			ideas[i] = obj.ideas[i];
 	}
-	return (*this);
+	return *this;
 }
