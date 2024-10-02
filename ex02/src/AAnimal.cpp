@@ -28,9 +28,9 @@ AAnimal::AAnimal(const AAnimal& obj) {
 AAnimal& AAnimal::operator=(const AAnimal& obj) {
     if (this != &obj)
         type = obj.type;
-    return (*this);
+    return *this;
 }
 
 std::string AAnimal::getType() const {
-    return (type);
+    return type;
 }

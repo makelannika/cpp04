@@ -23,13 +23,13 @@ CC			=	c++ -std=c++11
 
 FLAGS		=	-Wall -Wextra -Werror
 
-%.o:%.cpp
-	$(CC) $(FLAGS) $(HEADERS) -c $< -o $@
-
 all: $(NAME)
 
 $(NAME): $(OFILES)
 	$(CC) $(FLAGS) $(OFILES) -o $(NAME)
+
+%.o:%.cpp
+	$(CC) $(FLAGS) $(HEADERS) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

@@ -34,7 +34,7 @@ Cat& Cat::operator=(const Cat& obj) {
         delete brain;
 		brain = new Brain(*obj.brain);
 	}
-    return (*this);
+    return *this;
 }
 
 void    Cat::makeSound() const {
