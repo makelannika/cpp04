@@ -26,6 +26,10 @@ int main()
     const WrongAnimal* wrong2 = new WrongCat();
     std::cout << std::endl;
 
+	/* creatig a WrongCat */
+	WrongCat	wrongCat;
+	std::cout << std::endl;
+
     /* printing the type of each Animal */
     std::cout << "animal1 is an " << animal1->getType() << std::endl;
     std::cout << "animal2 is a " << animal2->getType() << std::endl;
@@ -43,11 +47,16 @@ int main()
     animal3->makeSound();
 	std::cout << std::endl;
 
-	/* WrongAnimal & WrongCat makes WrongAnimal sound */
+	/* WrongAnimal* makes WrongAnimal sound */
     std::cout << wrong1->getType() << ": ";
     wrong1->makeSound();
     std::cout << wrong2->getType() << ": ";
     wrong2->makeSound();
+	std::cout << std::endl;
+
+	/* WrongCat makes WrongCat sound */
+	std::cout << wrongCat.getType() << ": ";
+	wrongCat.makeSound();
     std::cout << std::endl;
 
     /* deleting All animals */

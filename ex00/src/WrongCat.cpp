@@ -30,3 +30,7 @@ WrongCat& WrongCat::operator=(const WrongCat& obj) {
         WrongAnimal::operator=(obj);
     return *this;
 }
+
+void    WrongCat::makeSound() const {
+    std::cout << "i'm a wrong cat" << std::endl; 
+}
