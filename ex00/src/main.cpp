@@ -18,6 +18,7 @@
 
 int main()
 {
+	/* creating Animal & WrongAnimal pointers */
     const Animal* animal1 = new Animal();
     const Animal* animal2 = new Dog();
     const Animal* animal3 = new Cat();
@@ -25,6 +26,7 @@ int main()
     const WrongAnimal* wrong2 = new WrongCat();
     std::cout << std::endl;
 
+    /* printing the type of each Animal */
     std::cout << "animal1 is an " << animal1->getType() << std::endl;
     std::cout << "animal2 is a " << animal2->getType() << std::endl;
     std::cout << "animal3 is a " << animal3->getType() << std::endl;
@@ -32,18 +34,23 @@ int main()
     std::cout << "wrong2 is a " << wrong2->getType() << std::endl;
     std::cout << std::endl;
     
+	/* each Animal makes their sound */
     std::cout << animal1->getType() << ": ";
     animal1->makeSound();
     std::cout << animal2->getType() << ": ";
     animal2->makeSound();
     std::cout << animal3->getType() << ": ";
     animal3->makeSound();
+	std::cout << std::endl;
+
+	/* WrongAnimal & WrongCat makes WrongAnimal sound */
     std::cout << wrong1->getType() << ": ";
     wrong1->makeSound();
     std::cout << wrong2->getType() << ": ";
     wrong2->makeSound();
     std::cout << std::endl;
 
+    /* deleting All animals */
     delete animal1;
     delete animal2;
     delete animal3;
