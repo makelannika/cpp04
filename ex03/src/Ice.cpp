@@ -18,9 +18,7 @@ Ice::~Ice() {}
 
 Ice::Ice(const Ice& obj) : AMateria(obj) {}
 
-Ice&	Ice::operator=(const Ice& obj) {
-	if (this != &obj)
-		AMateria::operator=(obj); 
+Ice&	Ice::operator=(const Ice&) {
 	return *this;
 }
 

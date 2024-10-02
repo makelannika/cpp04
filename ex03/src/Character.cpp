@@ -72,7 +72,8 @@ void	Character::equip(AMateria* m) {
 			return ;
 		}
 	}
-	std::cout << "inventory is full, cannot equip " << m->getType() << std::endl;
+	if (m)
+		std::cout << "inventory is full, cannot equip " << m->getType() << std::endl;
 	delete m;
 }
 

@@ -44,7 +44,8 @@ void	MateriaSource::learnMateria(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (!learned[i]) {
 			learned[i] = m;
-			std::cout << "new materia '" << m->getType() << "' learned" << std::endl;
+			if (m)
+				std::cout << "new materia '" << m->getType() << "' learned" << std::endl;
 			return ;
 		}
 	}
@@ -59,6 +60,6 @@ AMateria*	MateriaSource::createMateria(std::string const & type) {
 			return (learned[i]->clone());
 		}
 	}
-	std::cout << "no template to create'" << type << std::endl;
+	std::cout << "no template to create '" << type << "'" << std::endl;
 	return 0;
 }

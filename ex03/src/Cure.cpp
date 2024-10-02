@@ -18,9 +18,7 @@ Cure::~Cure() {}
 
 Cure::Cure(const Cure& obj) : AMateria(obj) {}
 
-Cure&	Cure::operator=(const Cure& obj) {
-	if (this != &obj)
-		AMateria::operator=(obj);
+Cure&	Cure::operator=(const Cure&) {
 	return *this;
 }
 
